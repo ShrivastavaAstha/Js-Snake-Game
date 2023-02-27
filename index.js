@@ -3,7 +3,8 @@ const foodSound = new Audio("foodSound.mp3");
 const gameOverSound = new Audio("gameOverSound.mp3");
 const moveSound = new Audio("moveSound.mp3");
 const musicSound = new Audio();
-let speed = 10;
+const controls = document.querySelectorAll(".controls i");
+let speed = 6;
 let score = 0;
 let lastPaintTime = 0;
 let snakeArr = [{ x: 13, y: 15 }];
@@ -137,4 +138,25 @@ window.addEventListener("keydown", (e) => {
     default:
       break;
   }
+});
+
+const changeDirection = (e) => {
+  if (e.key === "ArrowUp") {
+    inputDir.x = 0;
+    inputDir.y = -1;
+  } else if (e.key === "ArrowDown") {
+    inputDir.x = 0;
+    inputDir.y = 1;
+  } else if (e.key === "ArrowLeft") {
+    inputDir.x = -1;
+    inputDir.y = 0;
+  } else if (e.key === "ArrowRight") {
+    inputDir.x = 1;
+    inputDir.y = 0;
+  }
+};
+controls.forEach((key) => {
+  key.addEventListener("click", () =>
+    changeDirection({ key: key.dataset.key })
+  );
 });
