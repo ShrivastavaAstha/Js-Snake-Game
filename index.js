@@ -4,7 +4,7 @@ const gameOverSound = new Audio("gameOverSound.mp3");
 const moveSound = new Audio("moveSound.mp3");
 const musicSound = new Audio();
 const controls = document.querySelectorAll(".controls i");
-let speed = 6;
+let speed = 10;
 let score = 0;
 let lastPaintTime = 0;
 let snakeArr = [{ x: 13, y: 15 }];
@@ -43,7 +43,7 @@ function gameEngine() {
     gameOverSound.play();
     //musicSound.pause();
     inputDir = { x: 0, y: 0 };
-    alert("Game Over. Press any key to play again!");
+    alert("Game Over 😔. Press OK To Play Again!");
     snakeArr = [{ x: 13, y: 15 }];
     score = 0;
   }
@@ -104,7 +104,7 @@ if (hiscore === null) {
   localStorage.setItem("hiscore", JSON.stringify(hiscoreval));
 } else {
   hiscoreval = JSON.parse(hiscore);
-  hiscoreBox.innerHTML = "HiScore: " + hiscore;
+  hiscoreBox.innerHTML = "High Score: " + hiscore;
 }
 window.requestAnimationFrame(main);
 window.addEventListener("keydown", (e) => {

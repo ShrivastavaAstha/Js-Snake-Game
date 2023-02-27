@@ -5,7 +5,7 @@
 
 .body{
     background: url("../bg.jpg");
-    min-height: 90vh;
+    min-height: 100vh;
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
     display: flex;
@@ -16,7 +16,7 @@
 #scoreBox{
     position: absolute;
     top: 9px;
-    right:200px;
+    right:108px;
     font-size: 39px;
     font-weight: bold;
 
@@ -24,8 +24,8 @@
 
 #hiscoreBox{
     position: absolute;
-    top: 59px;
-    right: 140px;
+    top: 44px;
+    right: 30px;
     font-size: 39px;
     font-weight: bold;
 }
@@ -67,18 +67,20 @@
 }
 .controls i {
     padding: 25px 0;
-    text-align: bottom;
+    text-align: center;
     font-size: 1.3rem;
-    color:#020303;
+    color:#88cbcb;
     width: calc(100% / 4);
     cursor: pointer;
-    border-right : 1px solid #171B;
+    border-right : 4px solid rgba(6, 8, 6, 0.733);
+    background: linear-gradient(rgb(21, 43, 20),rgb(50, 50, 14));
 }
 
 @media screen and (max-width: 800px) {
     .controls {
         display:flex;
         align-items: bottom;
+        justify-content: end;
     }
 
     .controls i {
@@ -86,12 +88,8 @@
         font-size: 1rem;
     }
 
-    .body {
-        width: 90vmin;
-        height: 115vmin;
-    }
     #board {
-        width: 100vmin;
+        width: 100%;
         height: 100vmin;
     }
     #scoreBox {
@@ -100,4 +98,6 @@
     #hiscoreBox {
         font-size: 1.6rem;
     }
+    .body {min-height: 95vh;}
 }
+
